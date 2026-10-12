@@ -18,8 +18,12 @@ function App() {
         <div>
           <h1>My Path Finder</h1>
           <p>
+            Welcome to your personalized path finder!
+          </p>
+          <p>
             Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
           </p>
+          
         </div>
         <button
           type="button"
