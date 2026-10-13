@@ -3,7 +3,7 @@
         "name": "O*NET Mini Interest Profiler",
         "url": "https://api-v2.onetcenter.org/mnm/interestprofiler/questions_30?end=30",
         "license": "CC BY 4.0",
-        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
         "retrieved": "2026-10-12"
     },
     "answerOptions": [
