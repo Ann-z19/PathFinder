@@ -1,0 +1,183 @@
+{
+    "source": {
+        "name": "O*NET Mini Interest Profiler",
+        "url": "https://api-v2.onetcenter.org/mnm/interestprofiler/questions_30?end=30",
+        "license": "CC BY 4.0",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "retrieved": "2026-10-12"
+    },
+    "answerOptions": [
+        {
+            "value": 1,
+            "name": "Strongly Dislike"
+        },
+        {
+            "value": 2,
+            "name": "Dislike"
+        },
+        {
+            "value": 3,
+            "name": "Unsure"
+        },
+        {
+            "value": 4,
+            "name": "Like"
+        },
+        {
+            "value": 5,
+            "name": "Strongly Like"
+        }
+    ],
+    "questions": [
+        {
+            "index": 1,
+            "area": "R",
+            "text": "Build kitchen cabinets"
+        },
+        {
+            "index": 2,
+            "area": "I",
+            "text": "Develop a new medicine"
+        },
+        {
+            "index": 3,
+            "area": "A",
+            "text": "Write books or plays"
+        },
+        {
+            "index": 4,
+            "area": "S",
+            "text": "Help people with personal or emotional problems"
+        },
+        {
+            "index": 5,
+            "area": "E",
+            "text": "Manage a department within a large company"
+        },
+        {
+            "index": 6,
+            "area": "C",
+            "text": "Install software across computers on a large network"
+        },
+        {
+            "index": 7,
+            "area": "R",
+            "text": "Repair household appliances"
+        },
+        {
+            "index": 8,
+            "area": "I",
+            "text": "Study ways to reduce water pollution"
+        },
+        {
+            "index": 9,
+            "area": "A",
+            "text": "Compose or arrange music"
+        },
+        {
+            "index": 10,
+            "area": "S",
+            "text": "Give career guidance to people"
+        },
+        {
+            "index": 11,
+            "area": "E",
+            "text": "Start your own business"
+        },
+        {
+            "index": 12,
+            "area": "C",
+            "text": "Operate a calculator"
+        },
+        {
+            "index": 13,
+            "area": "R",
+            "text": "Assemble electronic parts"
+        },
+        {
+            "index": 14,
+            "area": "I",
+            "text": "Conduct chemical experiments"
+        },
+        {
+            "index": 15,
+            "area": "A",
+            "text": "Create special effects for movies"
+        },
+        {
+            "index": 16,
+            "area": "S",
+            "text": "Perform rehabilitation therapy"
+        },
+        {
+            "index": 17,
+            "area": "E",
+            "text": "Negotiate business contracts"
+        },
+        {
+            "index": 18,
+            "area": "C",
+            "text": "Keep shipping and receiving records"
+        },
+        {
+            "index": 19,
+            "area": "R",
+            "text": "Drive a truck to deliver packages to offices and homes"
+        },
+        {
+            "index": 20,
+            "area": "I",
+            "text": "Examine blood samples using a microscope"
+        },
+        {
+            "index": 21,
+            "area": "A",
+            "text": "Paint sets for plays"
+        },
+        {
+            "index": 22,
+            "area": "S",
+            "text": "Do volunteer work at a non-profit organization"
+        },
+        {
+            "index": 23,
+            "area": "E",
+            "text": "Market a new line of clothing"
+        },
+        {
+            "index": 24,
+            "area": "C",
+            "text": "Inventory supplies using a hand-held computer"
+        },
+        {
+            "index": 25,
+            "area": "R",
+            "text": "Test the quality of parts before shipment"
+        },
+        {
+            "index": 26,
+            "area": "I",
+            "text": "Develop a way to better predict the weather"
+        },
+        {
+            "index": 27,
+            "area": "A",
+            "text": "Write scripts for movies or television shows"
+        },
+        {
+            "index": 28,
+            "area": "S",
+            "text": "Teach a high-school class"
+        },
+        {
+            "index": 29,
+            "area": "E",
+            "text": "Sell merchandise at a department store"
+        },
+        {
+            "index": 30,
+            "area": "C",
+            "text": "Stamp, sort, and distribute mail for an organization"
+        }
+    ]
+}
