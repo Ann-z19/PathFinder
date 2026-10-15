@@ -1,0 +1,111 @@
+/* Shared page frame: header navigation, page content area, footer.
+   Matches the Navigation / Footer frames in Figma (Day + Night Mode). */
+
+.layout {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  min-height: var(--nav-height);
+  padding: 0 var(--space-page);
+  background: var(--color-nav-bg);
+  border-bottom: 1px solid var(--color-nav-border);
+}
+
+.site-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-logo);
+  color: var(--color-nav-text);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: var(--text-md);
+  color: var(--color-nav-link);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-link.is-active {
+  font-weight: var(--weight-semibold);
+  color: var(--color-nav-link-active);
+  text-decoration: underline;
+}
+
+.nav-signin {
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-pill);
+  background: var(--color-emphasis);
+  color: var(--color-on-emphasis);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+}
+
+/* ---------- Page content ---------- */
+
+.site-main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-page);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: 44px;
+  padding: var(--space-3) var(--space-page);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ---------- Narrow screens (tablet / phone) ---------- */
+
+@media (max-width: 768px) {
+  .site-header {
+    flex-wrap: wrap;
+    padding: var(--space-4) var(--space-5);
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  .site-main {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-3) var(--space-5);
+  }
+}

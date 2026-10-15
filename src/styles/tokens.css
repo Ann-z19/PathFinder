@@ -47,6 +47,8 @@
   --color-nav-bg: var(--ink-900);
   --color-nav-text: var(--cream-100);
   --color-nav-border: var(--forest-700);
+  --color-nav-link: var(--cream-100);
+  --color-nav-link-active: var(--cream-100);
 
   /* ---------- Typography ---------- */
   --font-display: 'DM Serif Display', Georgia, serif;   /* logo, page titles, career names */
@@ -116,6 +118,8 @@
   --color-nav-bg: var(--ink-900);
   --color-nav-text: var(--night-text);
   --color-nav-border: var(--night-border);
+  --color-nav-link: var(--night-muted);
+  --color-nav-link-active: var(--gold-100);
 
   color-scheme: dark;
 }
@@ -145,6 +149,8 @@
     --color-nav-bg: var(--ink-900);
     --color-nav-text: var(--night-text);
     --color-nav-border: var(--night-border);
+    --color-nav-link: var(--night-muted);
+    --color-nav-link-active: var(--gold-100);
 
     color-scheme: dark;
   }
