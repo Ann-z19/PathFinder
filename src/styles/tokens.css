@@ -50,6 +50,19 @@
   --color-nav-link: var(--cream-100);
   --color-nav-link-active: var(--cream-100);
 
+  --color-primary-bg: var(--forest-700);   /* main call to action, e.g. Next */
+  --color-on-primary: var(--cream-100);
+  --color-icon: var(--forest-700);
+
+  --color-progress-track: #ede8d9;         /* assessment progress bar */
+  --color-progress-fill: var(--forest-700);
+
+  --color-choice-bg: var(--cream-100);     /* answer options, question prompt */
+  --color-choice-border: var(--sand-300);
+  --color-choice-selected-bg: #f4dfce;
+  --color-choice-selected-border: var(--copper-500);
+  --color-choice-selected-text: var(--ink-900);
+
   /* ---------- Typography ---------- */
   --font-display: 'DM Serif Display', Georgia, serif;   /* logo, page titles, career names */
   --font-body: 'Inter', system-ui, 'Segoe UI', sans-serif;
@@ -121,6 +134,19 @@
   --color-nav-link: var(--night-muted);
   --color-nav-link-active: var(--gold-100);
 
+  --color-primary-bg: var(--gold-100);
+  --color-on-primary: var(--ink-900);
+  --color-icon: var(--gold-100);
+
+  --color-progress-track: #1e2e2b;
+  --color-progress-fill: var(--gold-100);
+
+  --color-choice-bg: #141f1c;
+  --color-choice-border: #263330;
+  --color-choice-selected-bg: #1a3630;
+  --color-choice-selected-border: var(--gold-100);
+  --color-choice-selected-text: var(--gold-100);
+
   color-scheme: dark;
 }
 
@@ -151,6 +177,19 @@
     --color-nav-border: var(--night-border);
     --color-nav-link: var(--night-muted);
     --color-nav-link-active: var(--gold-100);
+
+    --color-primary-bg: var(--gold-100);
+    --color-on-primary: var(--ink-900);
+    --color-icon: var(--gold-100);
+
+    --color-progress-track: #1e2e2b;
+    --color-progress-fill: var(--gold-100);
+
+    --color-choice-bg: #141f1c;
+    --color-choice-border: #263330;
+    --color-choice-selected-bg: #1a3630;
+    --color-choice-selected-border: var(--gold-100);
+    --color-choice-selected-text: var(--gold-100);
 
     color-scheme: dark;
   }
