@@ -113,7 +113,6 @@ function Assessment(){
                     Back
                 </button>
                 <div className="assessment-actions-right">
-                    {/* TODO (A6): Save & exit */}
                     <button type="button" className="btn btn-secondary" onClick={saveAndExit}>
                         Save &amp; exit
                     </button>
