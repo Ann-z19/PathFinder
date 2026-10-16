@@ -4,11 +4,14 @@ import {BrowserRouter} from 'react-router'
 import './styles/tokens.css'
 import './index.css'
 import App from './App.jsx'
+import AssessmentProvider from './context/AssessmentProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <AssessmentProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AssessmentProvider>
   </StrictMode>,
 )
