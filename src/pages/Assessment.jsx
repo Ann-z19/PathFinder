@@ -39,6 +39,10 @@ function Assessment(){
         }
     }
 
+    function saveAndExit(){
+        navigate('/')
+    }
+
     
 
     return(
@@ -110,7 +114,7 @@ function Assessment(){
                 </button>
                 <div className="assessment-actions-right">
                     {/* TODO (A6): Save & exit */}
-                    <button type="button" className="btn btn-secondary">
+                    <button type="button" className="btn btn-secondary" onClick={saveAndExit}>
                         Save &amp; exit
                     </button>
                     <button type="button" className="btn btn-primary" onClick={goNext} disabled={!isAnswered}>
