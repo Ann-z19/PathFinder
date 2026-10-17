@@ -1,0 +1,67 @@
+/* Results page layout. Matches Figma "Career matches" (Day + Night Mode). */
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.results-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.results-intro p {
+  color: var(--color-text-muted);
+}
+
+.results-workspace {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+.results-sidebar {
+  flex-shrink: 0;
+  width: 260px;
+}
+
+.results-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.results-placeholder {
+  padding: var(--space-8) var(--space-6);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* Not finished yet */
+.results-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.results-empty p {
+  color: var(--color-text-muted);
+}
+
+.results-empty .btn {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .results-workspace {
+    flex-direction: column;
+  }
+
+  .results-sidebar {
+    width: 100%;
+  }
+}

@@ -23,3 +23,11 @@ export function calculateScores(answers){
     }
     return scores
 }
+
+export function getTopAreas(scores, count=3){
+    const topAreas = Object.entries(scores)
+        .sort((a,b)=> b[1] - a[1])
+        .slice(0, count).map((entry)=>(entry[0]))
+    
+        return topAreas
+}
