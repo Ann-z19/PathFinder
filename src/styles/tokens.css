@@ -63,6 +63,22 @@
   --color-choice-selected-border: var(--copper-500);
   --color-choice-selected-text: var(--ink-900);
 
+  --color-eyebrow: var(--slate-600);       /* small line above big headings */
+
+  --color-feature-bg: var(--forest-700);   /* "Your path, at a glance" card on Home */
+  --color-feature-border: var(--forest-700);
+  --color-feature-text: var(--cream-100);
+  --color-feature-muted: var(--cream-100);
+  --color-feature-label: var(--cream-100);
+  --color-feature-note-label: var(--cream-100);
+  --color-feature-divider: #e8e4d9;
+  --color-step-1-bg: var(--gold-100);
+  --color-step-1-icon: var(--forest-700);
+  --color-step-2-bg: var(--cream-200);
+  --color-step-2-icon: var(--forest-700);
+  --color-step-3-bg: var(--cream-200);
+  --color-step-3-icon: var(--forest-700);
+
   /* ---------- Typography ---------- */
   --font-display: 'DM Serif Display', Georgia, serif;   /* logo, page titles, career names */
   --font-body: 'Inter', system-ui, 'Segoe UI', sans-serif;
@@ -147,6 +163,22 @@
   --color-choice-selected-border: var(--gold-100);
   --color-choice-selected-text: var(--gold-100);
 
+  --color-eyebrow: #f8bca5;
+
+  --color-feature-bg: #142220;
+  --color-feature-border: var(--night-border);
+  --color-feature-text: var(--night-text);
+  --color-feature-muted: #7a9e97;
+  --color-feature-label: var(--gold-100);
+  --color-feature-note-label: #f8bca5;
+  --color-feature-divider: var(--night-track);
+  --color-step-1-bg: var(--gold-100);
+  --color-step-1-icon: var(--ink-900);
+  --color-step-2-bg: var(--copper-500);
+  --color-step-2-icon: var(--ink-900);
+  --color-step-3-bg: var(--night-track);
+  --color-step-3-icon: var(--gold-100);
+
   color-scheme: dark;
 }
 
@@ -190,6 +222,22 @@
     --color-choice-selected-bg: #1a3630;
     --color-choice-selected-border: var(--gold-100);
     --color-choice-selected-text: var(--gold-100);
+
+    --color-eyebrow: #f8bca5;
+
+    --color-feature-bg: #142220;
+    --color-feature-border: var(--night-border);
+    --color-feature-text: var(--night-text);
+    --color-feature-muted: #7a9e97;
+    --color-feature-label: var(--gold-100);
+    --color-feature-note-label: #f8bca5;
+    --color-feature-divider: var(--night-track);
+    --color-step-1-bg: var(--gold-100);
+    --color-step-1-icon: var(--ink-900);
+    --color-step-2-bg: var(--copper-500);
+    --color-step-2-icon: var(--ink-900);
+    --color-step-3-bg: var(--night-track);
+    --color-step-3-icon: var(--gold-100);
 
     color-scheme: dark;
   }
