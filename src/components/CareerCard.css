@@ -1,0 +1,77 @@
+/* One career in the Results list.*/
+
+.career-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+/* Title on the left, match badge on the right */
+.career-card-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.career-card-title {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--text-lg);
+  line-height: normal;
+  color: var(--color-text);
+}
+
+.career-card-match {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--color-emphasis);
+  color: var(--color-on-emphasis);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+}
+
+.career-card-meta {
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+  color: var(--color-text-muted);
+}
+
+/* O*NET descriptions can be long: show at most 2 lines, then "…" */
+.career-card-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--color-card-body);
+}
+
+/* Divider above the actions (Day Mode only; transparent at night) */
+.career-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-subtle-border);
+}
+
+/* "View details": small and quiet (Day: outlined, Night: text only) */
+.career-card-actions .btn {
+  height: 30px;
+  padding: 0 10px;
+  background: transparent;
+  border-color: var(--color-subtle-border);
+  text-decoration: none;
+}
+
+.career-card-actions .btn:hover {
+  border-color: var(--color-button-border);
+}

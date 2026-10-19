@@ -41,6 +41,9 @@
   --color-button-border: var(--forest-700);
   --color-button-text: var(--ink-900);
 
+  --color-subtle-border: var(--sand-300);  /* card divider, View details outline */
+  --color-card-body: var(--slate-600);     /* career description on cards */
+
   --color-track: var(--sand-300);          /* interest score bar background */
   --color-bar: var(--forest-700);          /* interest score bar fill */
 
@@ -141,6 +144,9 @@
   --color-button-border: var(--night-border);
   --color-button-text: var(--gold-100);
 
+  --color-subtle-border: transparent;
+  --color-card-body: var(--night-text);
+
   --color-track: var(--night-track);
   --color-bar: var(--mint-200);
 
@@ -200,6 +206,9 @@
     --color-button-bg: var(--night-surface);
     --color-button-border: var(--night-border);
     --color-button-text: var(--gold-100);
+
+    --color-subtle-border: transparent;
+    --color-card-body: var(--night-text);
 
     --color-track: var(--night-track);
     --color-bar: var(--mint-200);

@@ -1,3 +1,7 @@
+import { useMemo } from 'react'
+import occupationsData from '../data/occupations.json'
+import { rankOccupations } from '../lib/matching'
+import CareerCard from '../components/CareerCard'
 import { useAssessment } from "../context/assessment-context"
 import questionsData from "../data/questions.json"
 import { calculateScores, getTopAreas } from "../lib/scoring"
@@ -5,10 +9,14 @@ import { Link } from "react-router"
 import InterestProfile from "../components/InterestProfile"
 import "./Results.css"
 
+const RESULT_LIMIT = 10
+
 function Results() {
   const { answers } = useAssessment()
-  const scores = calculateScores(answers)
+  const scores = useMemo(()=>calculateScores(answers),[answers])
   const topAreas = getTopAreas(scores)
+  const ranked = useMemo(()=>rankOccupations(scores, occupationsData.occupations), [scores])
+  const topMatches = ranked.slice(0, RESULT_LIMIT)
   const isComplete = Object.keys(answers).length === questionsData.questions.length
 
   // 1. Not finished yet → ask the user to finish first
@@ -38,8 +46,15 @@ function Results() {
         </aside>
 
         <div className="results-main">
-          {/* Week 2: career cards, sort and filters */}
-          <p className="results-placeholder">Career matches coming next.</p>
+          <p className="results-count">Top {topMatches.length} matches</p>
+
+          <ul className="career-list">
+            {topMatches.map((occ) => (
+              <li key={occ.code}>
+                <CareerCard occupation={occ} />
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
