@@ -65,6 +65,7 @@ for (const row of occupationRows) {
     title: row.title,
     riasec: { R: riasec.R, I: riasec.I, A: riasec.A, S: riasec.S, E: riasec.E, C: riasec.C },
     jobZone,
+    description: row.description,
   });
 }
 
