@@ -43,3 +43,10 @@ export function matchPercent(userScores, occupationRiasec){
     return Math.round((r + 1) / 2 * 100)
 }
 
+export function rankOccupations(userScores, occupations){
+    return occupations.map((o)=>
+        ({
+            ...o, match:matchPercent(userScores, o.riasec)
+        })
+    ).sort((a,b)=>b.match-a.match)
+}
