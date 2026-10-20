@@ -1,0 +1,38 @@
+/* Loading screen between the assessment and the Results page. */
+
+.results-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  min-height: 50vh;
+  text-align: center;
+}
+
+/* A ring with one colored segment that spins */
+.results-loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid var(--color-track);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: results-loading-spin 0.9s linear infinite;
+}
+
+.results-loading-copy {
+  color: var(--color-text-muted);
+}
+
+@keyframes results-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* People who turn off animations in their OS settings get a still ring */
+@media (prefers-reduced-motion: reduce) {
+  .results-loading-spinner {
+    animation: none;
+  }
+}

@@ -33,7 +33,8 @@ function Assessment(){
 
     function goNext(){
         if(isLast){
-            navigate('/results')
+            // Tell Results we just finished, so it shows the short loading screen once
+            navigate('/results', { state: { justFinished: true } })
         }else{
             setCurrIndex((prev)=> prev+1)
         }
