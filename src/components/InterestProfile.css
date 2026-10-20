@@ -1,13 +1,9 @@
-/* "YOUR PROFILE" panel. */
+/* "YOUR PROFILE" section. The card around it is .results-sidebar (Results.css). */
 
 .interest-profile {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: var(--space-5);
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
 }
 
 .profile-label {

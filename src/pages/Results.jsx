@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import occupationsData from '../data/occupations.json'
 import { rankOccupations } from '../lib/matching'
 import CareerCard from '../components/CareerCard'
@@ -8,15 +8,18 @@ import { calculateScores, getTopAreas } from "../lib/scoring"
 import { Link } from "react-router"
 import InterestProfile from "../components/InterestProfile"
 import "./Results.css"
+import JobZoneFilter from '../components/JobZoneFilter'
 
 const RESULT_LIMIT = 10
 
 function Results() {
   const { answers } = useAssessment()
+  const [selectedZone, setSelectedZone] = useState(null)
   const scores = useMemo(()=>calculateScores(answers),[answers])
   const topAreas = getTopAreas(scores)
   const ranked = useMemo(()=>rankOccupations(scores, occupationsData.occupations), [scores])
-  const topMatches = ranked.slice(0, RESULT_LIMIT)
+  const filtered = ranked.filter((occ)=> selectedZone===null || occ.jobZone===selectedZone)
+  const topMatches = filtered.slice(0, RESULT_LIMIT)
   const isComplete = Object.keys(answers).length === questionsData.questions.length
 
   // 1. Not finished yet → ask the user to finish first
@@ -43,6 +46,7 @@ function Results() {
       <div className="results-workspace">
         <aside className="results-sidebar">
           <InterestProfile scores={scores} topAreas={topAreas} />
+          <JobZoneFilter selectedZone={selectedZone} onSelect={setSelectedZone} />
         </aside>
 
         <div className="results-main">

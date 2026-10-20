@@ -22,9 +22,17 @@
   gap: var(--space-6);
 }
 
+/* One card holding the interest profile and the preparation filter (Figma "Profile and filters") */
 .results-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
   flex-shrink: 0;
   width: 260px;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
 }
 
 .results-main {

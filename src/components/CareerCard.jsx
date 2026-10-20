@@ -1,20 +1,14 @@
 import { Link } from 'react-router'
+import { JOB_ZONE_OPTIONS } from '../lib/jobZones'
 import './CareerCard.css'
 
-//Short labels for each Job Zone
-//Education is derived from Job Zone
-const JOB_ZONE_LABELS ={
-    1: 'Ready now',
-    2: 'Ready now',
-    3: 'Some preparation',
-    4: "Bachelor's level",
-    5: 'Advanced degree',
-}
+
 
 // One career in the Results list: title, match %, Job Zone, description,
 // and a link to the details page.
 function CareerCard({occupation}){
     const {code, title, jobZone, description, match} = occupation
+    const zoneName = JOB_ZONE_OPTIONS.find((o)=>o.zone===jobZone).name
 
     return(
         <article className='career-card'>
@@ -23,9 +17,7 @@ function CareerCard({occupation}){
                 <span className="career-card-match">{match}% match</span>
             </header>
 
-            <p className="career-card-meta">
-                Job Zone {jobZone} · {JOB_ZONE_LABELS[jobZone]}
-            </p>
+            <p className='career-card-meta'>Preparation: {zoneName}</p>
 
             <p className="career-card-description">{description}</p>
 

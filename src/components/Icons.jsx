@@ -65,3 +65,16 @@ export function CircleCheckIcon({ size = 22 }) {
     </svg>
   )
 }
+
+export function CheckIcon({ size = 14 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path
+        d="M11.6662 3.5L5.25017 9.9162L2.3338 6.99975"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}
