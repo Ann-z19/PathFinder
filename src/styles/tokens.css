@@ -60,6 +60,9 @@
   --color-icon: var(--forest-700);
   --color-check: var(--forest-700);        /* check marks in task lists */
   --color-check-bg: transparent;
+  --color-tab-text: var(--ink-900);         /* career detail tabs */
+  --color-tab-active: var(--ink-900);
+  --color-tab-indicator: var(--forest-700); /* underline of the selected tab */
 
   --color-progress-track: #ede8d9;         /* assessment progress bar */
   --color-progress-fill: var(--forest-700);
@@ -167,6 +170,9 @@
   --color-icon: var(--gold-100);
   --color-check: var(--mint-200);
   --color-check-bg: var(--night-surface);
+  --color-tab-text: var(--night-muted);
+  --color-tab-active: var(--gold-100);
+  --color-tab-indicator: var(--gold-100);
 
   --color-progress-track: #1e2e2b;
   --color-progress-fill: var(--gold-100);
@@ -234,6 +240,9 @@
     --color-icon: var(--gold-100);
     --color-check: var(--mint-200);
     --color-check-bg: var(--night-surface);
+    --color-tab-text: var(--night-muted);
+    --color-tab-active: var(--gold-100);
+    --color-tab-indicator: var(--gold-100);
 
     --color-progress-track: #1e2e2b;
     --color-progress-fill: var(--gold-100);

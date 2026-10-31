@@ -5,10 +5,19 @@ import { ArrowLeftIcon, CheckIcon } from "../components/Icons"
 import occupationsData from "../data/occupations.json"
 import "./CareerDetails.css"
 
+const TABS = [
+    { id: "overview", label: "Overview" },
+    { id: "tasks", label: "Tasks" },
+    { id: "skills", label: "Skills" },
+    { id: "education", label: "Education" },
+    { id: "outlook", label: "Outlook" },
+]
+
 function CareerDetails(){
     const { code } = useParams()
     // The answer remembers which code it belongs to
     const [result, setResult] = useState({ code: null })
+    const [activeTab, setActiveTab] = useState(TABS[0].id)
 
     useEffect(() => {
         let ignore = false
@@ -76,22 +85,47 @@ function CareerDetails(){
                 <p className="career-details-code">{code}</p>
             </header>
 
-            <div className="career-details-overview">
-                <h2>What You Would Do</h2>
-                <p className="career-details-summary">{career.what_they_do}</p>
-
-                <h3>Common tasks</h3>
-                <ul className="career-task-list">
-                    {career.on_the_job?.map((task) => (
-                        <li key={task} className="career-task">
-                            <span className="career-task-check">
-                                <CheckIcon />
-                            </span>
-                            {task}
-                        </li>
-                    ))}
-                </ul>
+            <div className="career-tabs" role="tablist" aria-label="Career sections">
+                {TABS.map((tab)=>(
+                    <button 
+                        key={tab.id} 
+                        type="button"
+                        role="tab"
+                        aria-selected={activeTab === tab.id}
+                        className = {activeTab === tab.id ? "career-tab is-active" : "career-tab"}
+                        onClick={()=>(setActiveTab(tab.id))}
+                        >{tab.label}</button>
+                ))}
             </div>
+
+            <div className="career-details-overview">
+                {activeTab === "overview" && (
+                    <>
+                        <h2>What You Would Do</h2>
+                        <p className="career-details-summary">{career.what_they_do}</p>
+                    </>
+                )}
+
+                {activeTab === "tasks" && (
+                    <>
+                        <h3>Common tasks</h3>
+                        <ul className="career-task-list">
+                            {career.on_the_job?.map((task) => (
+                                <li key={task} className="career-task">
+                                    <span className="career-task-check">
+                                        <CheckIcon />
+                                    </span>
+                                    {task}
+                                </li>
+                            ))}
+                        </ul>
+                    </>
+                )}
+            </div>
+
+            {["skills","education","outlook"].includes(activeTab) && (
+                <p className="career-details-status">Coming soon</p>
+            )}
         </section>
     )
 }

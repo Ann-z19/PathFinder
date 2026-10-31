@@ -60,6 +60,55 @@
   color: var(--color-text-muted);
 }
 
+/* Tab bar: Overview / Tasks / Skills / Education / Outlook */
+.career-tabs {
+  display: flex;
+  align-self: stretch;
+  gap: var(--space-7);
+  box-shadow: inset 0 -1px 0 var(--color-border);
+  overflow-x: auto;
+}
+
+.career-tab {
+  flex-shrink: 0;
+  padding: var(--space-3) var(--space-1);
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--color-tab-text);
+  font-size: var(--text-md);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.career-tab:hover {
+  color: var(--color-tab-active);
+}
+
+.career-tab:focus-visible {
+  outline-offset: -2px;
+  border-radius: 4px;
+}
+
+.career-tab.is-active {
+  border-bottom-color: var(--color-tab-indicator);
+  color: var(--color-tab-active);
+  font-weight: var(--weight-semibold);
+}
+
+@media (max-width: 768px) {
+  .career-tabs {
+    gap: var(--space-5);
+  }
+}
+
+/* Phones: tighter gaps so all 5 tabs fit without scrolling */
+@media (max-width: 480px) {
+  .career-tabs {
+    gap: var(--space-3);
+  }
+}
+
 /* "What you would do" + "Common tasks"*/
 .career-details-overview {
   display: flex;
