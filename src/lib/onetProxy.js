@@ -4,10 +4,9 @@ const PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
 // Ask our onet-proxy Edge Function for one career.
 // Returns { career } on success, or { error } on failure.
 export async function fetchCareer(code) {
-  const url = new URL(PROXY_URL)
-  url.searchParams.set("code", code)
-
   try {
+    const url = new URL(PROXY_URL)
+    url.searchParams.set("code", code)
     const response = await fetch(url, {
       headers: { apikey: PUBLISHABLE_KEY },
     })
