@@ -1,0 +1,103 @@
+/* Career details page. */
+
+.career-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-6);
+}
+
+/* "Back to matches"*/
+.career-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--color-subtle-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-button-text);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+}
+
+.career-back svg {
+  color: var(--color-icon);
+}
+
+.career-back:hover {
+  border-color: var(--color-button-border);
+}
+
+/* Loading and error messages */
+.career-details-status {
+  color: var(--color-text-muted);
+}
+
+/* Career name with the O*NET code under it */
+.career-details-heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.career-details-code {
+  font-size: var(--text-md);
+  color: var(--color-text-muted);
+}
+
+/* "What you would do" + "Common tasks"*/
+.career-details-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 668px;
+}
+
+.career-details-overview h2 {
+  font-size: 26px;
+  line-height: 1.15;
+}
+
+.career-details-overview h3 {
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+.career-details-summary {
+  font-size: 15px;
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-muted);
+}
+
+.career-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Check mark on the left, task text on the right */
+.career-task {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  line-height: var(--leading-normal);
+  color: var(--color-text-muted);
+}
+
+/* Day: plain check; Night: check inside a small round badge */
+.career-task-check {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-pill);
+  background: var(--color-check-bg);
+  color: var(--color-check);
+}

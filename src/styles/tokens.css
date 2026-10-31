@@ -58,6 +58,8 @@
   --color-primary-bg: var(--forest-700);   /* main call to action, e.g. Next */
   --color-on-primary: var(--cream-100);
   --color-icon: var(--forest-700);
+  --color-check: var(--forest-700);        /* check marks in task lists */
+  --color-check-bg: transparent;
 
   --color-progress-track: #ede8d9;         /* assessment progress bar */
   --color-progress-fill: var(--forest-700);
@@ -163,6 +165,8 @@
   --color-primary-bg: var(--gold-100);
   --color-on-primary: var(--ink-900);
   --color-icon: var(--gold-100);
+  --color-check: var(--mint-200);
+  --color-check-bg: var(--night-surface);
 
   --color-progress-track: #1e2e2b;
   --color-progress-fill: var(--gold-100);
@@ -228,6 +232,8 @@
     --color-primary-bg: var(--gold-100);
     --color-on-primary: var(--ink-900);
     --color-icon: var(--gold-100);
+    --color-check: var(--mint-200);
+    --color-check-bg: var(--night-surface);
 
     --color-progress-track: #1e2e2b;
     --color-progress-fill: var(--gold-100);
