@@ -35,6 +35,19 @@
   color: var(--color-text-muted);
 }
 
+/* Shown when the API failed and we fall back to local data */
+.career-details-notice {
+  max-width: 668px;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
 /* Career name with the O*NET code under it */
 .career-details-heading {
   display: flex;

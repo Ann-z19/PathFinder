@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router"
 import { fetchCareer } from "../lib/onetProxy"
 import { ArrowLeftIcon, CheckIcon } from "../components/Icons"
+import occupationsData from "../data/occupations.json"
 import "./CareerDetails.css"
 
 function CareerDetails(){
@@ -37,7 +38,27 @@ function CareerDetails(){
         )
     }
     if (result.error) {
-        return (
+        //If the API failed: fall back to the basic info in the local database
+        const local = occupationsData.occupations.find((o)=>o.code===result.code)
+        if(local){
+            return (
+                <section className="career-details">
+                    {backLink}
+                    <header className="career-details-heading">
+                        <h1>{local.title}</h1>
+                        <p className="career-details-code">{code}</p>
+                    </header>
+                    <p className="career-details-notice">Full details could not be loaded right now. Showing limited basic info</p>
+                    <div className="career-details-overview">
+                        <h2>What You Would Do</h2>
+                        <p className="career-details-summary">{local.description}</p>
+                    </div>
+                </section>
+            )
+        }
+
+        //error page code if not in the local either
+        return(
             <section className="career-details">
                 {backLink}
                 <p className="career-details-status">{result.error}</p>
@@ -52,11 +73,11 @@ function CareerDetails(){
 
             <header className="career-details-heading">
                 <h1>{career.title}</h1>
-                <p className="career-details-code">O*NET code {code}</p>
+                <p className="career-details-code">{code}</p>
             </header>
 
             <div className="career-details-overview">
-                <h2>What you would do</h2>
+                <h2>What You Would Do</h2>
                 <p className="career-details-summary">{career.what_they_do}</p>
 
                 <h3>Common tasks</h3>
