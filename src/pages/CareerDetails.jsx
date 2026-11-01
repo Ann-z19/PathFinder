@@ -188,16 +188,16 @@ function CareerDetails() {
                   </>
                 )}
                 <h3>{career.education.job_zone.title}</h3>
-                <p>
-                  <strong>Education:</strong>{" "}
+                <p className="career-fact">
+                  <strong>Education: </strong>
                   {career.education.job_zone.education}
                 </p>
-                <p>
-                  <strong>Experience:</strong>{" "}
+                <p className="career-fact">
+                  <strong>Experience: </strong>
                   {career.education.job_zone.experience}
                 </p>
-                <p>
-                  <strong>Training:</strong>{" "}
+                <p className="career-fact">
+                  <strong>Training: </strong>
                   {career.education.job_zone.training}
                 </p>
               </>
@@ -212,8 +212,8 @@ function CareerDetails() {
             <h2>Job Outlook</h2>
             {career.job_outlook ? (
               <>
-                <h3>{career.job_outlook.outlook.category}</h3>
-                <p>{career.job_outlook.outlook.description}</p>
+                <h3 className="career-outlook-category">{career.job_outlook.outlook.category}</h3>
+                <p className="career-details-summary">{career.job_outlook.outlook.description}</p>
                 {career.job_outlook.bright_outlook && (
                   <ul className="career-task-list">
                     {career.job_outlook.bright_outlook.map((item) => (
@@ -229,13 +229,13 @@ function CareerDetails() {
                 {career.job_outlook.salary && (
                 <>
                 <h3>Salary Expectations</h3>
-                <p>
-                  <strong>Median Salary:</strong>{" "}
+                <p className="career-salary-median">
+                  <strong>Median Salary: </strong>
                   {usd.format(career.job_outlook.salary.annual_median)}
                 </p>
-                <p>
-                    <strong>Range:</strong> 
-                    {usd.format(career.job_outlook.salary.annual_10th_percentile)} - {usd.format(career.job_outlook.salary.annual_90th_percentile)}
+                <p className="career-details-summary">
+                    <strong>Range: </strong>
+                    {usd.format(career.job_outlook.salary.annual_10th_percentile)} – {usd.format(career.job_outlook.salary.annual_90th_percentile)}
                 </p>
                 </>
                 )}
