@@ -12,6 +12,11 @@ const TABS = [
   { id: "education", label: "Education" },
   { id: "outlook", label: "Outlook" },
 ];
+const usd = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0,
+});
 
 function CareerDetails() {
   const { code } = useParams();
@@ -163,45 +168,84 @@ function CareerDetails() {
         )}
 
         {activeTab === "education" && (
-            <>
-                <h2>Education & Training</h2>
-                {career.education ? (
-                    <>
-                    {career.education.education_usually_needed && (
-                        <>
-                        <h3>Usually need</h3>
-                        <ul className="career-task-list">
-                            {career.education.education_usually_needed.map((item) => (
-                                <li key={item} className="career-task">
-                                    <span className="career-task-check">
-                                        <CheckIcon />
-                                    </span>
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                        </>
-                    )}
-                        <h3>{career.education.job_zone.title}</h3>
-                        <p><strong>Education:</strong> {career.education.job_zone.education}</p>
-                        <p><strong>Experience:</strong> {career.education.job_zone.experience}</p>
-                        <p><strong>Training:</strong> {career.education.job_zone.training}</p>
-                    </>
-                ):(<p>Education & Training info is not available right now.</p>)}
-
-            </>
+          <>
+            <h2>Education & Training</h2>
+            {career.education ? (
+              <>
+                {career.education.education_usually_needed && (
+                  <>
+                    <h3>Usually needed</h3>
+                    <ul className="career-task-list">
+                      {career.education.education_usually_needed.map((item) => (
+                        <li key={item} className="career-task">
+                          <span className="career-task-check">
+                            <CheckIcon />
+                          </span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+                <h3>{career.education.job_zone.title}</h3>
+                <p>
+                  <strong>Education:</strong>{" "}
+                  {career.education.job_zone.education}
+                </p>
+                <p>
+                  <strong>Experience:</strong>{" "}
+                  {career.education.job_zone.experience}
+                </p>
+                <p>
+                  <strong>Training:</strong>{" "}
+                  {career.education.job_zone.training}
+                </p>
+              </>
+            ) : (
+              <p className="career-details-status">Education & Training info is not available right now.</p>
+            )}
+          </>
         )}
 
         {activeTab === "outlook" && (
-            <>
-            </>
+          <>
+            <h2>Job Outlook</h2>
+            {career.job_outlook ? (
+              <>
+                <h3>{career.job_outlook.outlook.category}</h3>
+                <p>{career.job_outlook.outlook.description}</p>
+                {career.job_outlook.bright_outlook && (
+                  <ul className="career-task-list">
+                    {career.job_outlook.bright_outlook.map((item) => (
+                      <li key={item.code} className="career-task">
+                        <span className="career-task-check">
+                          <CheckIcon />
+                        </span>
+                        {item.title}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {career.job_outlook.salary && (
+                <>
+                <h3>Salary Expectations</h3>
+                <p>
+                  <strong>Median Salary:</strong>{" "}
+                  {usd.format(career.job_outlook.salary.annual_median)}
+                </p>
+                <p>
+                    <strong>Range:</strong> 
+                    {usd.format(career.job_outlook.salary.annual_10th_percentile)} - {usd.format(career.job_outlook.salary.annual_90th_percentile)}
+                </p>
+                </>
+                )}
+              </>
+            ) : (
+              <p className="career-details-status">Job outlook info is not available right now.</p>
+            )}
+          </>
         )}
-
       </div>
-
-      {["outlook"].includes(activeTab) && (
-        <p className="career-details-status">Coming soon</p>
-      )}
     </section>
   );
 }
