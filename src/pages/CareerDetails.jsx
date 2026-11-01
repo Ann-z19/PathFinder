@@ -136,7 +136,7 @@ function CareerDetails() {
         {activeTab === "skills" && (
           <>
             <h2>Skills You'll Need</h2>
-            {career.skills ? (
+            {career.skills?.length > 0 ? (
               <>
                 {career.skills.map((group) => (
                   <div key={group.id} className="career-skill-group">
@@ -161,9 +161,45 @@ function CareerDetails() {
             )}
           </>
         )}
+
+        {activeTab === "education" && (
+            <>
+                <h2>Education & Training</h2>
+                {career.education ? (
+                    <>
+                    {career.education.education_usually_needed && (
+                        <>
+                        <h3>Usually need</h3>
+                        <ul className="career-task-list">
+                            {career.education.education_usually_needed.map((item) => (
+                                <li key={item} className="career-task">
+                                    <span className="career-task-check">
+                                        <CheckIcon />
+                                    </span>
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                        </>
+                    )}
+                        <h3>{career.education.job_zone.title}</h3>
+                        <p><strong>Education:</strong> {career.education.job_zone.education}</p>
+                        <p><strong>Experience:</strong> {career.education.job_zone.experience}</p>
+                        <p><strong>Training:</strong> {career.education.job_zone.training}</p>
+                    </>
+                ):(<p>Education & Training info is not available right now.</p>)}
+
+            </>
+        )}
+
+        {activeTab === "outlook" && (
+            <>
+            </>
+        )}
+
       </div>
 
-      {["education", "outlook"].includes(activeTab) && (
+      {["outlook"].includes(activeTab) && (
         <p className="career-details-status">Coming soon</p>
       )}
     </section>
