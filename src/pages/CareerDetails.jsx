@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import { fetchCareer } from "../lib/onetProxy";
 import { ArrowLeftIcon, CheckIcon } from "../components/Icons";
+import { useAssessment } from "../context/assessment-context";
+import questionsData from "../data/questions.json";
+import { calculateScores, getTopAreas } from "../lib/scoring";
+import {matchPercent} from "../lib/matching";
 import occupationsData from "../data/occupations.json";
+import riasecData from "../data/riasec.json";
 import "./CareerDetails.css";
 
 const TABS = [
@@ -23,6 +28,13 @@ function CareerDetails() {
   // The answer remembers which code it belongs to
   const [result, setResult] = useState({ code: null });
   const [activeTab, setActiveTab] = useState(TABS[0].id);
+  const { answers } = useAssessment();
+  //Local data
+  const localData = occupationsData.occupations.find((o) => o.code === code);
+  const isComplete = Object.keys(answers).length === questionsData.questions.length;
+  const match = isComplete && localData ? matchPercent(calculateScores(answers), localData.riasec) : null;
+  const interestTypes = localData ? getTopAreas(localData.riasec, 2).
+  map((area) => riasecData.areas[area].title).join(" • ") : null;
 
   useEffect(() => {
     let ignore = false;
@@ -54,25 +66,23 @@ function CareerDetails() {
     );
   }
   if (result.error) {
-    //If the API failed: fall back to the basic info in the local database
-    const local = occupationsData.occupations.find(
-      (o) => o.code === result.code,
-    );
-    if (local) {
+    if (localData) {
       return (
         <section className="career-details">
           {backLink}
           <header className="career-details-heading">
-            <h1>{local.title}</h1>
-            <p className="career-details-code">{code}</p>
+            <h1>{localData.title}</h1>
+            <p className="career-details-code">{interestTypes ?? code}</p>
+            {match !== null && <span className = "career-match-badge">{match}% match</span>}
           </header>
+          
           <p className="career-details-notice">
             Full details could not be loaded right now. Showing limited basic
             info
           </p>
           <div className="career-details-overview">
             <h2>What You Would Do</h2>
-            <p className="career-details-summary">{local.description}</p>
+            <p className="career-details-summary">{localData.description}</p>
           </div>
         </section>
       );
@@ -94,7 +104,8 @@ function CareerDetails() {
 
       <header className="career-details-heading">
         <h1>{career.title}</h1>
-        <p className="career-details-code">{code}</p>
+        <p className="career-details-code">{interestTypes ?? code}</p>
+        {match !== null && <span className = "career-match-badge">{match}% match</span>}
       </header>
 
       <div className="career-tabs" role="tablist" aria-label="Career sections">

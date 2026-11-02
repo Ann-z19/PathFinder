@@ -22,7 +22,7 @@ function Results() {
   const [isRevealing, setIsRevealing] = useState(location.state?.justFinished === true)
   const [selectedZone, setSelectedZone] = useState(null)
   const scores = useMemo(()=>calculateScores(answers),[answers])
-  const topAreas = getTopAreas(scores)
+  const topAreas = getTopAreas(scores, 6)
   const ranked = useMemo(()=>rankOccupations(scores, occupationsData.occupations), [scores])
   const filtered = ranked.filter((occ)=> selectedZone===null || occ.jobZone===selectedZone)
   const topMatches = filtered.slice(0, RESULT_LIMIT)
