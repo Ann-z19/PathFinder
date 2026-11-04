@@ -1,0 +1,54 @@
+/* Preparation snapshot: key facts in a side card.*/
+
+.career-snapshot {
+  overflow: hidden;
+  border: 1px solid var(--color-snapshot-border);
+  border-radius: var(--radius-md);
+  background: var(--color-snapshot-bg);
+}
+
+.career-snapshot-title {
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-snapshot-head-bg);
+  color: var(--color-snapshot-head-text);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.career-snapshot-fact {
+  margin: 0;
+  padding: var(--space-2) var(--space-6) var(--space-6);
+}
+
+/* One fact: small label, bigger value, divider above all but the first */
+.career-snapshot-fact > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: var(--space-3) 0;
+  line-height: var(--leading-normal);
+}
+
+.career-snapshot-fact > div + div {
+  border-top: 1px solid var(--color-snapshot-divider);
+}
+
+.career-snapshot-fact dt {
+  color: var(--color-snapshot-label);
+  font-size: var(--text-sm);
+}
+
+.career-snapshot-fact dd {
+  margin: 0;
+  color: var(--color-snapshot-value);
+  font-size: 15px;
+  font-weight: var(--weight-semibold);
+}
+
+/* O*NET writes "bachelor's degree": show "Bachelor's degree" */
+.career-snapshot-fact dd::first-letter {
+  text-transform: uppercase;
+}

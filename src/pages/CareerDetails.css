@@ -48,11 +48,70 @@
   line-height: var(--leading-normal);
 }
 
-/* Career name with the O*NET code under it */
+/* Title row: name + interest types on the left, match badge and Save on the right */
 .career-details-heading {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-self: stretch;
+  gap: var(--space-5);
+}
+
+.career-identity {
+  display: flex;
+  flex: 1 1 320px;
   flex-direction: column;
   gap: var(--space-2);
+  min-width: 0;
+}
+
+.career-match-badge {
+  flex-shrink: 0;
+  padding: 7px 14px;
+  border: 1px solid var(--color-match-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-match-bg);
+  color: var(--color-match-text);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+}
+
+.career-save {
+  flex-shrink: 0;
+}
+
+/* Two columns: tabs and content on the left, snapshot card on the right */
+.career-details-body {
+  display: grid;
+  grid-template-columns: minmax(0, 668px) 376px;
+  align-items: start;
+  align-self: stretch;
+  gap: 48px;
+}
+
+.career-details-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.career-details-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.career-compare {
+  width: 100%;
+}
+
+/* Narrow screens: the snapshot card moves under the content */
+@media (max-width: 960px) {
+  .career-details-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .career-details-code {

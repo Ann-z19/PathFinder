@@ -63,6 +63,16 @@
   --color-tab-text: var(--ink-900);         /* career detail tabs */
   --color-tab-active: var(--ink-900);
   --color-tab-indicator: var(--forest-700); /* underline of the selected tab */
+  --color-match-bg: var(--forest-700);      /* "92% match" on career details */
+  --color-match-border: var(--forest-700);
+  --color-match-text: var(--cream-100);
+  --color-snapshot-bg: var(--cream-200);    /* Preparation snapshot card */
+  --color-snapshot-border: var(--sand-300);
+  --color-snapshot-head-bg: var(--copper-500);
+  --color-snapshot-head-text: var(--ink-950);
+  --color-snapshot-label: var(--slate-600);
+  --color-snapshot-value: var(--slate-600);
+  --color-snapshot-divider: #dedcd2;
 
   --color-progress-track: #ede8d9;         /* assessment progress bar */
   --color-progress-fill: var(--forest-700);
@@ -173,6 +183,16 @@
   --color-tab-text: var(--night-muted);
   --color-tab-active: var(--gold-100);
   --color-tab-indicator: var(--gold-100);
+  --color-match-bg: var(--night-surface);
+  --color-match-border: var(--night-border);
+  --color-match-text: var(--mint-200);
+  --color-snapshot-bg: #152220;
+  --color-snapshot-border: var(--copper-500);
+  --color-snapshot-head-bg: transparent;
+  --color-snapshot-head-text: #f8bca5;
+  --color-snapshot-label: #f8bca5;
+  --color-snapshot-value: #e8efec;
+  --color-snapshot-divider: var(--night-border);
 
   --color-progress-track: #1e2e2b;
   --color-progress-fill: var(--gold-100);
@@ -243,6 +263,16 @@
     --color-tab-text: var(--night-muted);
     --color-tab-active: var(--gold-100);
     --color-tab-indicator: var(--gold-100);
+    --color-match-bg: var(--night-surface);
+    --color-match-border: var(--night-border);
+    --color-match-text: var(--mint-200);
+    --color-snapshot-bg: #152220;
+    --color-snapshot-border: var(--copper-500);
+    --color-snapshot-head-bg: transparent;
+    --color-snapshot-head-text: #f8bca5;
+    --color-snapshot-label: #f8bca5;
+    --color-snapshot-value: #e8efec;
+    --color-snapshot-divider: var(--night-border);
 
     --color-progress-track: #1e2e2b;
     --color-progress-fill: var(--gold-100);
