@@ -1,3 +1,6 @@
+import { useEffect, useState} from "react"
+import { fetchCareer } from "../lib/onetProxy"
+import { usd } from "../lib/format"
 import { Link } from "react-router"
 import { useCompare } from "../context/compare-context"
 import { useAssessment } from "../context/assessment-context"
@@ -20,6 +23,41 @@ function Compare(){
             )
             .filter((career) => career !== undefined)
 
+        // API details for every compared career: { "15-1252.00": career, ... }
+    // Like CareerDetails, the result remembers which list it belongs to.
+    const [result, setResult] = useState({key: null, details: {}})
+    const key = careers.map((career)=>(career.code)).join(",")
+
+    useEffect(()=>{
+        if(key==="")return //nothing to load
+        let ignore = false
+        async function load() {
+            const codes = key.split(",")
+            const answers = await Promise.all(codes.map((code)=>fetchCareer(code)))
+            if(!ignore){
+                const details ={}
+                codes.forEach((code, i) =>{
+                    details[code] = answers[i].career
+                })
+                setResult({key, details})
+            }
+        }
+        load()
+        return()=>{
+            ignore = true
+        }
+    }, [key])
+
+    const isLoading = result.key !== key
+
+    
+    //helper function: Text for a cell that needs API data : "..." while loading, "-" when it's missing
+    function apiValue(career, pick){
+        if (isLoading) return "..."
+        const detail = result.details[career.code]
+        return(detail && pick(detail)) ?? "-"
+    }
+
     const ROWS = [
         {
             label: "Match",
@@ -30,10 +68,28 @@ function Compare(){
             getValue : (career) => JOB_ZONE_OPTIONS.find((option)=> option.zone === career.jobZone)?.name ?? "-",
         },
         {
+            label: "Typical education",
+            getValue: (career) => apiValue(career, (detail) => detail.education?.education_usually_needed?.[0]),
+        },
+        {
+            label: "Median pay",
+            getValue: (career) =>
+                apiValue(career, (detail) => {
+                const pay = detail.job_outlook?.salary?.annual_median
+                return pay ? usd.format(pay) : undefined
+                }),
+        },
+        {
+            label: "Outlook",
+            getValue: (career) => apiValue(career, (detail) => detail.job_outlook?.outlook.category),
+        },
+        {
             label: "Best for",
             getValue: (career) => getInterestTypes(career.riasec)
         }
     ]
+
+
     
     //Comparing needs at least 2 careers to compare
     if(careers.length < 2){
