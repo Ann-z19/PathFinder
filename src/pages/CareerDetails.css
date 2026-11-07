@@ -107,6 +107,27 @@
   width: 100%;
 }
 
+/* Shown when the compare list already has 3 careers */
+.career-compare-note {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+}
+
+.career-compare-note a {
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
+
+/* "View comparison (2)": a quiet text link under the button */
+.career-compare-link {
+  align-self: center;
+  color: var(--color-text);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  text-underline-offset: 3px;
+}
+
 /* Narrow screens: the snapshot card moves under the content */
 @media (max-width: 960px) {
   .career-details-body {

@@ -64,7 +64,7 @@
 }
 
 /* "View details": small and quiet (Day: outlined, Night: text only) */
-.career-card-actions .btn {
+.career-card-actions .career-card-details {
   height: 30px;
   padding: 0 10px;
   background: transparent;
@@ -72,6 +72,11 @@
   text-decoration: none;
 }
 
-.career-card-actions .btn:hover {
+.career-card-actions .career-card-details:hover {
   border-color: var(--color-button-border);
+}
+
+.career-card-compare {
+  height: 32px;
+  padding: 0 18px;
 }

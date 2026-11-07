@@ -7,6 +7,8 @@ import questionsData from "../data/questions.json";
 import { calculateScores, getTopAreas } from "../lib/scoring";
 import {matchPercent} from "../lib/matching";
 import { usd } from "../lib/format";
+import CompareButton from "../components/CompareButton";
+import {useCompare} from "../context/compare-context";
 import PreparationSnapshot from "../components/PreparationSnapshot";
 import occupationsData from "../data/occupations.json";
 import riasecData from "../data/riasec.json";
@@ -26,6 +28,7 @@ function CareerDetails() {
   const [result, setResult] = useState({ code: null });
   const [activeTab, setActiveTab] = useState(TABS[0].id);
   const { answers } = useAssessment();
+  const { compareList, isFull } = useCompare();
   //Local data
   const localData = occupationsData.occupations.find((o) => o.code === code);
   const isComplete = Object.keys(answers).length === questionsData.questions.length;
@@ -259,7 +262,17 @@ function CareerDetails() {
         </div>
           <div className = "career-details-side">
             <PreparationSnapshot career={career} localData={localData} />
-            <button type="button" className="btn btn-secondary career-compare">Add to compare</button>
+            <CompareButton code={code} className="career-compare" />
+
+            {!compareList.includes(code) && isFull && (
+              <p className="career-compare-note">You can compare up to 3 careers. Remove one on the <Link to="/compare">Compare page</Link> first.</p>
+            )}
+
+            {compareList.length > 0 && (
+              <Link to ="/compare" className="career-compare-link">
+                View comparison ({compareList.length})
+              </Link>
+            )}
           </div>
       </div>
     </section>
