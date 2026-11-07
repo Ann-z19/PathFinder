@@ -1,4 +1,5 @@
 import questionsData from '../data/questions.json'
+import riasecData from '../data/riasec.json'
 
 const questions = questionsData.questions
 
@@ -30,4 +31,10 @@ export function getTopAreas(scores, count=3){
         .slice(0, count).map((entry)=>(entry[0]))
     
         return topAreas
+}
+
+export function getInterestTypes(riasec){
+    return getTopAreas(riasec, 2).map((area)=>
+    riasecData.areas[area].title)
+    .join(" • ")
 }

@@ -73,6 +73,14 @@
   --color-snapshot-label: var(--slate-600);
   --color-snapshot-value: var(--slate-600);
   --color-snapshot-divider: #dedcd2;
+  --color-compare-border: var(--sand-300);    /* compare table */
+  --color-compare-head-bg: var(--gold-100);
+  --color-compare-row-a: var(--cream-100);
+  --color-compare-row-b: var(--cream-200);
+  --color-compare-divider: transparent;
+  --color-compare-label: var(--slate-600);
+  --color-compare-value: var(--ink-900);
+  --color-compare-match: var(--ink-900);
 
   --color-progress-track: #ede8d9;         /* assessment progress bar */
   --color-progress-fill: var(--forest-700);
@@ -193,6 +201,14 @@
   --color-snapshot-label: #f8bca5;
   --color-snapshot-value: #e8efec;
   --color-snapshot-divider: var(--night-border);
+  --color-compare-border: var(--night-border);
+  --color-compare-head-bg: var(--night-track);
+  --color-compare-row-a: var(--ink-900);
+  --color-compare-row-b: var(--night-track);
+  --color-compare-divider: var(--night-border);
+  --color-compare-label: #7a9e96;
+  --color-compare-value: var(--night-text);
+  --color-compare-match: var(--mint-200);
 
   --color-progress-track: #1e2e2b;
   --color-progress-fill: var(--gold-100);
@@ -273,6 +289,14 @@
     --color-snapshot-label: #f8bca5;
     --color-snapshot-value: #e8efec;
     --color-snapshot-divider: var(--night-border);
+    --color-compare-border: var(--night-border);
+    --color-compare-head-bg: var(--night-track);
+    --color-compare-row-a: var(--ink-900);
+    --color-compare-row-b: var(--night-track);
+    --color-compare-divider: var(--night-border);
+    --color-compare-label: #7a9e96;
+    --color-compare-value: var(--night-text);
+    --color-compare-match: var(--mint-200);
 
     --color-progress-track: #1e2e2b;
     --color-progress-fill: var(--gold-100);

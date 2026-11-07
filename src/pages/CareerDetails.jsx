@@ -4,14 +4,13 @@ import { fetchCareer } from "../lib/onetProxy";
 import { ArrowLeftIcon, CheckIcon } from "../components/Icons";
 import { useAssessment } from "../context/assessment-context";
 import questionsData from "../data/questions.json";
-import { calculateScores, getTopAreas } from "../lib/scoring";
+import { calculateScores, getInterestTypes } from "../lib/scoring";
 import {matchPercent} from "../lib/matching";
 import { usd } from "../lib/format";
 import CompareButton from "../components/CompareButton";
 import {useCompare} from "../context/compare-context";
 import PreparationSnapshot from "../components/PreparationSnapshot";
 import occupationsData from "../data/occupations.json";
-import riasecData from "../data/riasec.json";
 import "./CareerDetails.css";
 
 const TABS = [
@@ -33,8 +32,7 @@ function CareerDetails() {
   const localData = occupationsData.occupations.find((o) => o.code === code);
   const isComplete = Object.keys(answers).length === questionsData.questions.length;
   const match = isComplete && localData ? matchPercent(calculateScores(answers), localData.riasec) : null;
-  const interestTypes = localData ? getTopAreas(localData.riasec, 2).
-  map((area) => riasecData.areas[area].title).join(" • ") : null;
+  const interestTypes = localData ? getInterestTypes(localData.riasec) : null
 
   useEffect(() => {
     let ignore = false;
