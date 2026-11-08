@@ -91,3 +91,18 @@ export function CheckIcon({ size = 14 }) {
     </svg>
   )
 }
+
+// "x" (Lucide) for remove buttons. The cross fills the middle half of the box.
+export function XIcon({ size = 14 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path
+        d="M10.5 3.5L7 7M7 7L3.5 10.5M7 7L3.5 3.5M7 7L10.5 10.5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        vectorEffect="non-scaling-stroke"
+      />
+    </svg>
+  )
+}

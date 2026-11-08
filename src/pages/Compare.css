@@ -22,8 +22,8 @@
 
 .compare-table {
   width: 100%;
-  min-width: 640px;
-  border-collapse: collapse;
+  min-width: 560px;
+border-collapse: collapse;
   table-layout: fixed;
 }
 
@@ -96,19 +96,146 @@
   font-size: 21px;
 }
 
-/* Small screens: keep the criterion names visible while scrolling sideways */
-@media (max-width: 768px) {
-  .compare-table th:first-child {
-    position: sticky;
-    left: 0;
-    z-index: 1;
-    width: 140px;
-    background: inherit;
+/* Career name + "x" in the header row */
+.compare-career-head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+/* The "x" sits right after the name, not at the far edge of a wide column */
+.compare-career-head a {
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+/* "x": remove a career from the compare list */
+.compare-remove {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid var(--color-compare-remove-border);
+  border-radius: 6px;
+  background: var(--color-compare-remove-bg);
+  color: var(--color-compare-remove-icon);
+  cursor: pointer;
+}
+
+.compare-remove:hover {
+  border-color: var(--color-compare-remove-icon);
+}
+
+/* O*NET writes "bachelor's degree": show "Bachelor's degree" */
+.compare-table td::first-letter,
+.compare-card-facts dd::first-letter {
+  text-transform: uppercase;
+}
+
+/* Phones: one card per career instead of the table */
+.compare-cards {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .compare-table-wrap {
+    display: none;
   }
 
-  .compare-table thead th:first-child {
-    background: var(--color-compare-head-bg);
+  .compare-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
   }
+}
+
+.compare-cards-label {
+  color: var(--color-text);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.compare-card {
+  overflow: hidden;
+  border: 1px solid var(--color-compare-card-border);
+  border-radius: var(--radius-md);
+  background: var(--color-compare-card-bg);
+}
+
+.compare-card-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 22px;
+  background: var(--color-compare-head-bg);
+}
+
+.compare-card-title {
+  flex: 1;
+  min-width: 0;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.compare-card-title a {
+  color: var(--color-compare-value);
+  text-decoration: none;
+}
+
+.compare-card-head .compare-remove {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: transparent;
+}
+
+.compare-card-facts {
+  margin: 0;
+}
+
+/* One row per criterion: label on the left, value on the right */
+.compare-card-facts > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  border-top: 1px solid var(--color-compare-card-border);
+  line-height: var(--leading-normal);
+}
+
+.compare-card-facts > div:nth-child(odd) {
+  background: var(--color-compare-row-a);
+}
+
+.compare-card-facts > div:nth-child(even) {
+  background: var(--color-compare-card-row-b);
+}
+
+.compare-card-facts dt {
+  flex-shrink: 0;
+  width: 115px;
+  color: var(--color-compare-card-label);
+  font-size: var(--text-md);
+}
+
+.compare-card-facts dd {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  color: var(--color-compare-value);
+  font-size: 15px;
+  font-weight: var(--weight-semibold);
+}
+
+/* First row is Match */
+.compare-card-facts > div:first-child dd {
+  color: var(--color-compare-card-match);
+  font-size: 24px;
 }
 
 /* Fewer than 2 careers */

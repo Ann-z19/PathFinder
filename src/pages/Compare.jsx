@@ -9,13 +9,14 @@ import { calculateScores, getInterestTypes } from "../lib/scoring"
 import {matchPercent} from "../lib/matching"
 import { JOB_ZONE_OPTIONS } from "../lib/jobZones"
 import occupationsData from "../data/occupations.json"
+import { XIcon } from "../components/Icons"
 import "./Compare.css"
 
 function Compare(){
     const { answers } = useAssessment()
     const isComplete = Object.keys(answers).length === questionsData.questions.length
     const scores = calculateScores(answers)
-    const { compareList } = useCompare()
+    const { compareList, remove } = useCompare()
 
     const careers = compareList
             .map((code) => occupationsData.occupations.find(
@@ -121,9 +122,19 @@ function Compare(){
                             <th scope="col">Your possibilities</th>
                             {careers.map((career)=>(
                                 <th key = {career.code} scope="col">
-                                    <Link to={ `/careers/${career.code}`}>
-                                        {career.title}
-                                    </Link>
+                                    <div className="compare-career-head">
+                                        <Link to={ `/careers/${career.code}`}>
+                                            {career.title}
+                                        </Link>
+                                        <button
+                                            type="button"
+                                            className="compare-remove"
+                                            onClick={()=>remove(career.code)}
+                                            aria-label={`Remove ${career.title} from compare`}
+                                        >
+                                            <XIcon />
+                                        </button>
+                                    </div>
                                 </th>
                             ))}
                         </tr>
@@ -141,6 +152,36 @@ function Compare(){
                         ))}
                     </tbody>
                 </table>
+            </div>
+
+            {/* Phones: one card per career (the same ROWS, looped the other way) */}
+            <div className="compare-cards">
+            <p className="compare-cards-label">Your possibilities</p>
+{careers.map((career) => (
+                <article key={career.code} className="compare-card">
+                <div className="compare-card-head">
+                    <h2 className="compare-card-title">
+                    <Link to={`/careers/${career.code}`}>{career.title}</Link>
+                    </h2>
+                    <button
+                    type="button"
+                    className="compare-remove"
+                    onClick={() => remove(career.code)}
+                    aria-label={`Remove ${career.title} from compare`}
+                    >
+                    <XIcon size={32} />
+                    </button>
+                </div>
+                <dl className="compare-card-facts">
+                    {ROWS.map((row) => (
+                    <div key={row.label}>
+                        <dt>{row.label}</dt>
+                        <dd>{row.getValue(career)}</dd>
+                    </div>
+                    ))}
+                </dl>
+                </article>
+            ))}
             </div>
         </section>
     )

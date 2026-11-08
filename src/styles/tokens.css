@@ -81,6 +81,14 @@
   --color-compare-label: var(--slate-600);
   --color-compare-value: var(--ink-900);
   --color-compare-match: var(--ink-900);
+  --color-compare-remove-bg: #ecc76e;         /* "x" buttons on the compare page */
+  --color-compare-remove-border: var(--sand-300);
+  --color-compare-remove-icon: var(--forest-700);
+  --color-compare-card-bg: var(--cream-200);  /* phone cards */
+  --color-compare-card-border: var(--sand-300);
+  --color-compare-card-row-b: var(--cream-200);
+  --color-compare-card-label: var(--slate-600);
+  --color-compare-card-match: var(--forest-700);
 
   --color-progress-track: #ede8d9;         /* assessment progress bar */
   --color-progress-fill: var(--forest-700);
@@ -209,6 +217,14 @@
   --color-compare-label: #7a9e96;
   --color-compare-value: var(--night-text);
   --color-compare-match: var(--mint-200);
+  --color-compare-remove-bg: transparent;
+  --color-compare-remove-border: var(--copper-500);
+  --color-compare-remove-icon: var(--copper-500);
+  --color-compare-card-bg: var(--night-surface);
+  --color-compare-card-border: var(--night-border);
+  --color-compare-card-row-b: var(--night-surface);
+  --color-compare-card-label: var(--night-muted);
+  --color-compare-card-match: var(--mint-200);
 
   --color-progress-track: #1e2e2b;
   --color-progress-fill: var(--gold-100);
@@ -297,6 +313,14 @@
     --color-compare-label: #7a9e96;
     --color-compare-value: var(--night-text);
     --color-compare-match: var(--mint-200);
+    --color-compare-remove-bg: transparent;
+    --color-compare-remove-border: var(--copper-500);
+    --color-compare-remove-icon: var(--copper-500);
+    --color-compare-card-bg: var(--night-surface);
+    --color-compare-card-border: var(--night-border);
+    --color-compare-card-row-b: var(--night-surface);
+    --color-compare-card-label: var(--night-muted);
+    --color-compare-card-match: var(--mint-200);
 
     --color-progress-track: #1e2e2b;
     --color-progress-fill: var(--gold-100);
