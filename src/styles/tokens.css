@@ -89,6 +89,30 @@
   --color-compare-card-row-b: var(--cream-200);
   --color-compare-card-label: var(--slate-600);
   --color-compare-card-match: var(--forest-700);
+  --color-field-label: var(--forest-700);        /* sign in form */
+  --color-field-bg: var(--cream-100);
+  --color-field-border: var(--sand-300);
+  --color-field-placeholder: var(--slate-600);
+  --color-field-icon: var(--forest-700);
+  --color-error: #9a2b12;
+  --color-submit-border: var(--forest-700);
+  --color-link-btn-border: var(--sand-300);     /* small text buttons, e.g. Create an account */
+  --color-link-btn-text: var(--ink-900);
+  --color-promo-bg: var(--forest-700);           /* "Your shortlist is waiting" card */
+  --color-promo-text: var(--cream-100);
+  --color-promo-muted: var(--cream-100);
+  --color-promo-label: var(--cream-100);
+  --color-promo-row-bg: var(--cream-200);
+  --color-promo-row-text: var(--slate-600);
+  --color-promo-row-icon: var(--forest-700);
+  --color-promo-badge-bg: var(--forest-700);
+  --color-promo-badge-text: var(--cream-100);
+  /* illustration on the sign in card: same in Day and Night Mode */
+  --color-art-glow: radial-gradient(319px 108px at 50% 75%, #bb6830 0%, #9b5420 22.5%, #7a4010 45%, #523d24 72.5%, #293937 100%);
+  --color-art-base: #293937;
+  --color-art-left: #1e3530;
+  --color-art-center: var(--copper-500);
+  --color-art-right: #263d37;
 
   --color-progress-track: #ede8d9;         /* assessment progress bar */
   --color-progress-fill: var(--forest-700);
@@ -225,6 +249,24 @@
   --color-compare-card-row-b: var(--night-surface);
   --color-compare-card-label: var(--night-muted);
   --color-compare-card-match: var(--mint-200);
+  --color-field-label: var(--night-text);
+  --color-field-bg: var(--night-surface);
+  --color-field-border: var(--night-border);
+  --color-field-placeholder: #9ecfca;
+  --color-field-icon: var(--night-muted);
+  --color-error: #f8bca5;
+  --color-submit-border: var(--copper-500);
+  --color-link-btn-border: transparent;
+  --color-link-btn-text: #f8bca5;
+  --color-promo-bg: var(--night-track);
+  --color-promo-text: var(--night-text);
+  --color-promo-muted: var(--night-muted);
+  --color-promo-label: var(--gold-100);
+  --color-promo-row-bg: var(--night-surface);
+  --color-promo-row-text: var(--night-text);
+  --color-promo-row-icon: var(--night-muted);
+  --color-promo-badge-bg: #12201c;
+  --color-promo-badge-text: var(--mint-200);
 
   --color-progress-track: #1e2e2b;
   --color-progress-fill: var(--gold-100);
@@ -321,6 +363,24 @@
     --color-compare-card-row-b: var(--night-surface);
     --color-compare-card-label: var(--night-muted);
     --color-compare-card-match: var(--mint-200);
+    --color-field-label: var(--night-text);
+    --color-field-bg: var(--night-surface);
+    --color-field-border: var(--night-border);
+    --color-field-placeholder: #9ecfca;
+    --color-field-icon: var(--night-muted);
+    --color-error: #f8bca5;
+    --color-submit-border: var(--copper-500);
+    --color-link-btn-border: transparent;
+    --color-link-btn-text: #f8bca5;
+    --color-promo-bg: var(--night-track);
+    --color-promo-text: var(--night-text);
+    --color-promo-muted: var(--night-muted);
+    --color-promo-label: var(--gold-100);
+    --color-promo-row-bg: var(--night-surface);
+    --color-promo-row-text: var(--night-text);
+    --color-promo-row-icon: var(--night-muted);
+    --color-promo-badge-bg: #12201c;
+    --color-promo-badge-text: var(--mint-200);
 
     --color-progress-track: #1e2e2b;
     --color-progress-fill: var(--gold-100);
