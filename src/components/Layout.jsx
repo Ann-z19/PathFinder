@@ -1,4 +1,6 @@
-import { Link, NavLink, Outlet } from "react-router";
+import { Link, NavLink, Outlet , useNavigate} from "react-router";
+import { useAuth } from "../context/auth-context";
+import { supabase } from "../lib/supabase";
 import "./Layout.css";
 
 const NAV_LINKS = [
@@ -9,6 +11,13 @@ const NAV_LINKS = [
 ];
 
 function Layout() {
+  const {user, loading} = useAuth()
+  const navigate = useNavigate()
+
+  async function handleSignOut(){
+    await supabase.auth.signOut()
+    navigate("/signin")
+  }
   return (
     <div className="layout">
       <header className="site-header">
@@ -27,9 +36,15 @@ function Layout() {
               {link.label}
             </NavLink>
           ))}
-          <NavLink to="/signin" className="nav-signin">
-            Sign In
-          </NavLink>
+          {loading ? null : user ? (
+              <button type="button" className="nav-signin" onClick={handleSignOut}>
+                Sign out
+              </button>
+            ) : (
+              <NavLink to="/signin" className="nav-signin">
+                Sign in
+              </NavLink>
+            )}
         </nav>
       </header>
       <main className="site-main">
