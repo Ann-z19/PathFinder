@@ -6,15 +6,18 @@ import './index.css'
 import App from './App.jsx'
 import AssessmentProvider from './context/AssessmentProvider.jsx'
 import CompareProvider from './context/CompareProvider.jsx'
+import AuthProvider from './context/AuthProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AssessmentProvider>
-      <CompareProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </CompareProvider>
-    </AssessmentProvider>
+    <AuthProvider>
+      <AssessmentProvider>
+        <CompareProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </CompareProvider>
+      </AssessmentProvider>
+    </AuthProvider>
   </StrictMode>,
 )
