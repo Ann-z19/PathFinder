@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import { JOB_ZONE_OPTIONS } from '../lib/jobZones'
 import CompareButton from './CompareButton'
+import SaveButton from './SaveButton'
 import './CareerCard.css'
 
 
@@ -26,7 +27,10 @@ function CareerCard({occupation}){
                 <Link to={`/careers/${code}`} className="btn btn-secondary career-card-details">
                     View details
                 </Link>
-                <CompareButton code={code} className="career-card-compare" />
+                <div className="career-card-buttons">
+                    <SaveButton code={code} className="career-card-save" />
+                    <CompareButton code={code} className="career-card-compare" />
+                </div>
             </footer>
         </article>
     )

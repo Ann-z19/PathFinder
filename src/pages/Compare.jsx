@@ -10,6 +10,7 @@ import {matchPercent} from "../lib/matching"
 import { JOB_ZONE_OPTIONS } from "../lib/jobZones"
 import occupationsData from "../data/occupations.json"
 import { XIcon } from "../components/Icons"
+import SaveButton from "../components/SaveButton"
 import "./Compare.css"
 
 function Compare(){
@@ -151,6 +152,16 @@ function Compare(){
                             </tr>
                         ))}
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th scope="row">Save career</th>
+                            {careers.map((career) => (
+                                <td key={career.code}>
+                                    <SaveButton code={career.code} className="compare-save" />
+                                </td>
+                            ))}
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
 
@@ -180,6 +191,7 @@ function Compare(){
                     </div>
                     ))}
                 </dl>
+                <SaveButton code={career.code} className="compare-save" />
                 </article>
             ))}
             </div>

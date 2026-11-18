@@ -7,17 +7,20 @@ import App from './App.jsx'
 import AssessmentProvider from './context/AssessmentProvider.jsx'
 import CompareProvider from './context/CompareProvider.jsx'
 import AuthProvider from './context/AuthProvider.jsx'
+import ShortlistProvider from './context/ShortlistProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-      <AssessmentProvider>
-        <CompareProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
-        </CompareProvider>
-      </AssessmentProvider>
+      <ShortlistProvider>
+        <AssessmentProvider>
+          <CompareProvider>
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+          </CompareProvider>
+        </AssessmentProvider>
+      </ShortlistProvider>
     </AuthProvider>
   </StrictMode>,
 )

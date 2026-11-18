@@ -107,6 +107,7 @@
   --color-promo-row-icon: var(--forest-700);
   --color-promo-badge-bg: var(--forest-700);
   --color-promo-badge-text: var(--cream-100);
+  --color-note-bg: var(--cream-200);             /* Personal note box on Shortlist */
   /* illustration on the sign in card: same in Day and Night Mode */
   --color-art-glow: radial-gradient(319px 108px at 50% 75%, #bb6830 0%, #9b5420 22.5%, #7a4010 45%, #523d24 72.5%, #293937 100%);
   --color-art-base: #293937;
@@ -267,6 +268,7 @@
   --color-promo-row-icon: var(--night-muted);
   --color-promo-badge-bg: #12201c;
   --color-promo-badge-text: var(--mint-200);
+  --color-note-bg: var(--night-track);
 
   --color-progress-track: #1e2e2b;
   --color-progress-fill: var(--gold-100);
@@ -381,6 +383,7 @@
     --color-promo-row-icon: var(--night-muted);
     --color-promo-badge-bg: #12201c;
     --color-promo-badge-text: var(--mint-200);
+    --color-note-bg: var(--night-track);
 
     --color-progress-track: #1e2e2b;
     --color-progress-fill: var(--gold-100);

@@ -1,0 +1,206 @@
+/* Shortlist page: saved careers with personal notes */
+
+.shortlist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.shortlist-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.shortlist-intro h1 {
+  font-size: 34px;
+  line-height: 1.15;
+}
+
+.shortlist-intro p {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+}
+
+.shortlist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.shortlist-card {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 20px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+
+.shortlist-summary {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.shortlist-title {
+  color: var(--color-text);
+  font-size: var(--text-lg);
+  line-height: normal;
+}
+
+.shortlist-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.shortlist-action {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--color-subtle-border);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.shortlist-action:hover {
+  border-color: var(--color-button-border);
+}
+
+/* "Remove X from your shortlist?" */
+.shortlist-confirm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text);
+  font-size: var(--text-md);
+  font-weight: var(--weight-semibold);
+}
+
+.shortlist-confirm-buttons,
+.shortlist-note-buttons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.shortlist-confirm .btn,
+.shortlist-note-buttons .btn {
+  height: 32px;
+  padding: 0 14px;
+}
+
+.shortlist-note {
+  display: flex;
+  flex: 0 0 420px;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-note-bg);
+}
+
+.shortlist-note-label {
+  color: var(--color-label);
+  font-size: 10px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.shortlist-note-text {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.shortlist-note-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.shortlist-note-input {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-field-border);
+  border-radius: 10px;
+  background: var(--color-field-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+  resize: vertical;
+}
+
+/* Next step tip at the bottom */
+.shortlist-next {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+}
+
+/* The route icon from Figma, drawn in the theme's icon color */
+.shortlist-next-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  background: var(--color-icon);
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+/* Signed out, or nothing saved yet */
+.shortlist-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.shortlist-empty p {
+  color: var(--color-text-muted);
+}
+
+.shortlist-empty .btn {
+  text-decoration: none;
+}
+
+/* Tablets and phones: note goes under the summary */
+@media (max-width: 900px) {
+  .shortlist-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+
+  .shortlist-note {
+    flex-basis: auto;
+  }
+}

@@ -309,3 +309,45 @@
     padding: var(--space-5);
   }
 }
+
+/* Floating "sign in to save" notice, centered under the nav. It fades in, stays, then fades out
+   over 4s, the same time SignIn.jsx waits before removing it. */
+.signin-notice {
+  position: fixed;
+  top: calc(var(--nav-height) + var(--space-4));
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: fit-content;
+  max-width: calc(100% - 2 * var(--space-4));
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.18);
+  animation: signin-notice 4s ease both;
+}
+
+@keyframes signin-notice {
+  0% { opacity: 0; transform: translateY(-8px); }
+  8% { opacity: 1; transform: translateY(0); }
+  88% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signin-notice {
+    animation: none;
+  }
+}
+
+/* On phones the nav wraps to two rows, so show the notice at the bottom instead */
+@media (max-width: 600px) {
+  .signin-notice {
+    top: auto;
+    bottom: var(--space-4);
+  }
+}

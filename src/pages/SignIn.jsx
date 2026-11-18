@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { supabase } from "../lib/supabase"
-import { useNavigate } from "react-router"
+import { useNavigate, useLocation} from "react-router"
 import { EyeIcon, BookmarkCheckIcon } from "../components/Icons"
 import "./SignIn.css"
 
@@ -21,8 +21,18 @@ function SignIn() {
   const [mode, setMode] = useState("signin")
   const isSignUp = mode === "signup"
   const navigate = useNavigate()
+  const location = useLocation()
   // true = show the password as plain text
   const [showPassword, setShowPassword] = useState(false)
+  //true = SaveButton sent user here
+  const [ showNotice, setNotice ] = useState(location.state?.reason === "save")
+
+  //Hide the notice after 4 seconds
+  useEffect(()=>{
+    if(!showNotice)return
+    const timer = setTimeout(()=>setNotice(false), 4000)
+    return ()=>clearTimeout(timer)
+  }, [showNotice])
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -42,6 +52,11 @@ function SignIn() {
   return (
     <section className="signin">
       <div className="signin-main">
+        {showNotice && (
+          <p className="signin-notice" role="status">
+            Sign in to save careers to your shortlist.
+          </p>
+        )}
         <p className="signin-eyebrow">
           {isSignUp ? "Start your shortlist" : "Pick up where you left off"}
         </p>
