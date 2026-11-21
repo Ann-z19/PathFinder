@@ -11,12 +11,17 @@ const answerOptions = questionsData.answerOptions
 
 function Assessment(){
     //Hooks
-    const {answers, setAnswer} = useAssessment()
+    const {answers, setAnswer, resetAnswers} = useAssessment()
     const [currIndex, setCurrIndex] = useState(()=>{
         const firstUnanswered = questions.findIndex((q)=> answers[q.index] === undefined)
         return firstUnanswered === -1 ? questions.length - 1 : firstUnanswered
     })
     const navigate = useNavigate()
+    //true when the user open this page with every question already answered
+    const [showDone, setShowDone] = useState(()=>Object.keys(answers).length === questions.length)
+    //true while asking "Clear your answers?"
+    const [confirmRetake, setConfirmRetake] = useState(false)
+
 
     //state values
     const question = questions[currIndex]
@@ -44,6 +49,33 @@ function Assessment(){
         navigate('/')
     }
 
+    function retake(){
+        resetAnswers()
+        setCurrIndex(0)
+        setShowDone(false)
+        setConfirmRetake(false)
+    }
+
+    if(showDone){
+        return (
+            <section className='assessment-done'>
+                <h1>You have finished the assessment</h1>
+                <p>See your career matches, or start over. Starting over clears your current answers.</p>
+                <div className='assessment-done-actions'>
+                    {confirmRetake ? (
+                        <div className='assessment-done-confirm' role='alert'>
+                            <p>Clear all 30 answers and start over?</p>
+                            <button type='button' className='btn btn-primary' onClick={()=>retake()}>Yes, start over</button>
+                            <button type='button' className='btn btn-secondary' onClick={()=>setConfirmRetake(false)}>Cancel</button>
+                        </div>
+                    ):(<>
+                        <button type='button' className='btn btn-primary' onClick={()=>navigate("/results")}>See results</button>
+                        <button type='button' className='btn btn-secondary' onClick={()=>setConfirmRetake(true)}>Retake assessment</button>
+                    </>)}
+                </div>
+            </section>
+        )
+    }
     
 
     return(

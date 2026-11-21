@@ -217,3 +217,44 @@
     gap: var(--space-3);
   }
 }
+
+/* ---------- Already finished: See results or Retake ---------- */
+
+.assessment-done {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  max-width: 640px;
+  padding: 0 34px;
+}
+
+.assessment-done p {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+}
+
+.assessment-done-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* "Clear all 30 answers and start over?" with its two buttons */
+.assessment-done-confirm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.assessment-done-confirm p {
+  flex-basis: 100%;
+  color: var(--color-text);
+  font-weight: var(--weight-semibold);
+}
